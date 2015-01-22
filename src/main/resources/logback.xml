@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE logback>
+<configuration>
+
+  <appender name="ROOT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+      <Pattern>%d{yyyy/MM/dd HH:mm:ss} [%level] - %logger{0}:%L - %m%n</Pattern>
+    </encoder>
+  </appender>
+
+  <root level="DEBUG">
+    <appender-ref ref="ROOT" />
+  </root>
+
+</configuration>
