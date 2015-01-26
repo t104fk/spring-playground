@@ -15,4 +15,12 @@
 <input type="text" name="mailAddress">
 <input type="submit" value="post">
 </form>
+<h2>through json post</h2>
+<form name="" action="/api/json" method="post">
+<input type="text" name="username">
+<input type="text" name="mailAddress">
+<input type="text" name="gender">
+<input type="text" name="blood">
+<input type="submit" value="post">
+</form>
 </article>

@@ -1,6 +1,7 @@
 package net.takasing.command;
 
 import lombok.Data;
+import net.takasing.model.Attribute;
 import net.takasing.model.User;
 
 /**
@@ -10,4 +11,5 @@ import net.takasing.model.User;
 public class TestCommand {
     private String name;
     private User user;
+    private Attribute attribute;
 }
