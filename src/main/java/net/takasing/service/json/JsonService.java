@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 /**
- * @author toyofuku_takashi
+ * @author takasing
  */
 @Service
 public class JsonService {

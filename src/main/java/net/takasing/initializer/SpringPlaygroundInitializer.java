@@ -13,7 +13,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 
 /**
- * @author toyofuku_takashi
+ * @author takasing
  */
 public class SpringPlaygroundInitializer implements WebApplicationInitializer {
     private static final Logger LOGGER = LoggerFactory.getLogger(SpringPlaygroundInitializer.class);

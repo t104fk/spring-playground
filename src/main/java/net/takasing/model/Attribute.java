@@ -5,7 +5,7 @@ import net.takasing.enums.Blood;
 import net.takasing.enums.Gender;
 
 /**
- * @author toyofuku_takashi
+ * @author takasing
  */
 @Data
 public class Attribute {

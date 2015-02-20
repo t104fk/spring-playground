@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.OutputStreamWriter;
 
 /**
- * @author toyofuku_takashi
+ * @author takasing
  */
 @Service
 public class HttpService {

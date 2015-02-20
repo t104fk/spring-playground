@@ -8,6 +8,7 @@ import net.takasing.model.JsonApiEntitiy;
 import net.takasing.model.User;
 import net.takasing.service.HttpService;
 import net.takasing.service.json.JsonService;
+import org.apache.commons.lang3.CharEncoding;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URIBuilder;
@@ -21,10 +22,12 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.net.URI;
 
 /**
- * @author toyofuku_takashi
+ * @author takasing
  */
 @Controller
 public class TestController {
@@ -59,8 +62,22 @@ public class TestController {
     }
     @RequestMapping(value = {"/templateByJson"}, method = RequestMethod.POST)
     public String getTemplateByJson(@ModelAttribute("command") TestCommand command,
-                                    @RequestBody String posted) {
-        command.setName("payload=" + posted);
+//                                    @RequestBody String posted) {
+                                    HttpServletRequest request) {
+        StringBuilder builder = new StringBuilder();
+        try {
+            BufferedReader reader = request.getReader();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                builder.append(line);
+            }
+        } catch (IOException e) {
+            LOGGER.error("", e);
+            return null;
+        }
+        String posted = builder.toString();
+        LOGGER.info("payload=" + posted);
+        command.setName("template by json");
         JsonApiEntitiy entity = jsonService.deserialize(posted, JsonApiEntitiy.class);
         LOGGER.info("entity=" + entity);
         command.setUser(entity.getUser());
@@ -117,8 +134,7 @@ public class TestController {
         jsonApiEntitiy.setUser(user);
         jsonApiEntitiy.setAttribute(attribute);
 
-        StringEntity stringEntity = new StringEntity(jsonService.serialize(jsonApiEntitiy));
-        request.setHeader("Content-type", ContentType.APPLICATION_JSON.getMimeType());
+        StringEntity stringEntity = new StringEntity(jsonService.serialize(jsonApiEntitiy), ContentType.APPLICATION_JSON);
         request.setEntity(stringEntity);
 
         String entity = httpService.request(request);

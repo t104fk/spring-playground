@@ -8,7 +8,7 @@ import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
 
 /**
- * @author toyofuku_takashi
+ * @author takasing
  */
 @Configuration
 @EnableWebMvc

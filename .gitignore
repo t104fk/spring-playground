@@ -2,4 +2,5 @@
 *.iml
 .gradle
 build
+out
 src/main/java/jp

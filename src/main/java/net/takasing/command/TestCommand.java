@@ -5,7 +5,7 @@ import net.takasing.model.Attribute;
 import net.takasing.model.User;
 
 /**
- * @author toyofuku_takashi
+ * @author takasing
  */
 @Data
 public class TestCommand {

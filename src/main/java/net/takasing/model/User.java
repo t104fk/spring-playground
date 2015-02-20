@@ -3,7 +3,7 @@ package net.takasing.model;
 import lombok.Data;
 
 /**
- * @author toyofuku_takashi
+ * @author takasing
  */
 @Data
 public class User {

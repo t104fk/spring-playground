@@ -1,7 +1,7 @@
 package net.takasing.enums;
 
 /**
- * @author toyofuku_takashi
+ * @author takasing
  */
 public enum Blood {
     A(1),
