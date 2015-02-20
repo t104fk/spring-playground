@@ -25,7 +25,7 @@ import java.util.*;
 @Controller
 public class PartialController {
     private static final Logger LOGGER = LoggerFactory.getLogger(PartialController.class);
-    private static final String REPLACE_TEXT = "{{{module_here}}}";
+    private static final String REPLACE_TEXT = "<!--module_placeholder-->";
     @Autowired
     private FreeMarkerConfigurer freeMarkerConfigurer;
 
